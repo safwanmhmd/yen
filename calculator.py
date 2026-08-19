@@ -1,0 +1,25 @@
+import streamlit as st
+st.title('calculator app using stremlit')
+st.write('---------------------------------------')
+
+num1=st.number_input(label='enter the first number')
+num2=st.number_input(label='enter the second number')
+operation=st.radio('select the operator',('Add','Subtract','multiply','divide'))
+
+ans=0
+def calculate():
+  if operation=='Add':
+    ans=num1+num2
+  elif operation=='Subtract':
+    ans=num1-num2
+  elif operation=='multiply':
+    ans=num1*num2
+  elif operation=='divide':
+    ans=num1/num2
+  else:
+    ans='not defined'
+  st.success(f'answer={ans}')
+    
+
+if st.button('calculate result'):
+  calculate()
